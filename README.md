@@ -3,6 +3,8 @@
 If you enjoy the time saved by the scripts
 [ Buy me a coffee ](https://paypal.me/ttsantos)
 
+Used with [Scriptable](https://scriptable.app)
+
 ## Fantasy Premier League Private League Standings iOS Widget
 
 Displays:
