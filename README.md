@@ -1,6 +1,6 @@
 # Scriptable-examples
 
-[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](ttsantos@gmail.com)
+[ Buy me a coffee ](paypal.me/ttsantos)
 
 ## Fantasy Premier League Private League Standings iOS Widget;
 
