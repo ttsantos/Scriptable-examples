@@ -1,6 +1,6 @@
 # Scriptable-examples
 
-[ Buy me a coffee ](paypal.me/ttsantos)
+[ Buy me a coffee ](https://paypal.me/ttsantos)
 
 ## Fantasy Premier League Private League Standings iOS Widget;
 
