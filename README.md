@@ -1,6 +1,6 @@
 # Scriptable-examples
 
-If you enjoy the time saved by the scripts,  
+If you enjoy the time saved by the scripts
 [ Buy me a coffee ](https://paypal.me/ttsantos)
 
 ## Fantasy Premier League Private League Standings iOS Widget
@@ -9,7 +9,8 @@ Displays:
 
 1. Your team name
 2. Gameweek points
-3. Difference until the first team in your private league
+3. Private league ranking
+4. Difference until the first team in your private league
 
 ![iOS Widget example](https://github.com/ttsantos/Scriptable-examples/blob/main/Screenshot%202020-12-26%20at%2011.18.23.png?raw=true)
 
