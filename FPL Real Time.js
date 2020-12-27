@@ -111,11 +111,11 @@ async function getLeagueLiveLeaderPoints(){
 }
 
 async function getTotalPoints(teamId){
-  var isUpdated = result_1.league.closed;
-  // validate start of gw; during gw with official pending OK; during gw with official table updated; closed GW;
-  if(isUpdated == 0){
+  var GwFinished = result_1.league.closed;
+  // validate start of gw; during gw with official pending OK; during gw with official table updated (if not, get previous gw); closed GW;
+  if(GwFinished == 0){
     var liveScore = await getTotalLivePoints(teamId);
-    return findFPLData(result_1,teamId).total + liveScore;
+    return findFPLData(result_1,teamId).total + liveScore - findFPLData(result_1,teamId).event_total;
   }
   else return findFPLData(result_1,teamId).total; // + findFPLData(result_1,teamId).event_total
 }
