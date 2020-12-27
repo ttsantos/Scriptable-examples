@@ -146,7 +146,7 @@ console.log('topPointsLeader:' + totalPointsLeader + ', my team:'+ MyTotalPoints
 
 if (config.runsInWidget) {
   // create and show widget
-  let widget = createWidget(findFPLData(result_1,varEntryId).entry_name, "League Leader:", totalPointsLeader , "GW Live Points", myScore, differencePointsFromFirst, differencePointsFromFirstAll);
+  let widget = createWidget(findFPLData(result_1,varEntryId).entry_name, "League Leader", totalPointsLeader , "GW Live Points", myScore, differencePointsFromFirst, differencePointsFromFirstAll);
   Script.setWidget(widget);
   Script.complete();
 } else {
