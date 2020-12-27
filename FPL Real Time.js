@@ -111,7 +111,8 @@ async function getLeagueLiveLeaderPoints(){
 }
 
 async function getTotalPoints(teamId){
-  var isUpdated = result_1.standings.results[0].event_total;
+  var isUpdated = result_1.league.closed;
+
   if(isUpdated == 0){
     var liveScore = await getTotalLivePoints(teamId);
     return findFPLData(result_1,teamId).total + liveScore;
