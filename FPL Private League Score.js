@@ -110,7 +110,7 @@ let preReadTxt = widget.addText(preRead.toString());
 preReadTxt.textColor = Color.white();
 preReadTxt.textOpacity = 0.8;
 preReadTxt.textSize = 14;
-let readTxt = widget.addText(read.toString() + ' (' + pointsDifference.toString()+ ' pts to #1)');
+let readTxt = widget.addText(read.toString() + ' (' + pointsDifference.toString()+ ' pts)');
 readTxt.textColor = Color.white();
 readTxt.textSize = 23;
 
