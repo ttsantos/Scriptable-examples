@@ -21,7 +21,7 @@ Displays:
 
 **Default parameters for iOS widget: {"leagueId":11769,"teamId":2699654}**
 
-## Fantasy Premier League Private League Standings iOS Widget (FPL Private League Score.js)
+## Fantasy Premier League Private League Standings iOS Widget (FPL Private League Score.js) - only updates properly at the end of the GW;
 
 Displays:
 
