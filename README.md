@@ -3,9 +3,25 @@
 If you enjoy the time saved by the scripts
 [ Buy me a coffee ](https://paypal.me/ttsantos)
 
-Used with [Scriptable](https://scriptable.app)
+Used with [Scriptable](https://scriptable.app) and to be added as a widget on HomeScreen
 
-## Fantasy Premier League Private League Standings iOS Widget
+## Fantasy Premier League Private League Live Points iOS Widget (FPL Real Time.js)
+
+Displays:
+
+1. Your team name
+2. Gameweek live points (& difference till first in GW)
+3. Private league league leader points (& difference till first in League)
+
+![iOS Widget example](https://github.com/ttsantos/Scriptable-examples/blob/main/LiveScoreExample.jpeg?raw=true)
+
+---
+
+> Accepts JSON text as parameter for private league identifier and team identifier;
+
+**Default parameters for iOS widget: {"leagueId":11769,"teamId":2699654}**
+
+## Fantasy Premier League Private League Standings iOS Widget (FPL Private League Score.js)
 
 Displays:
 
