@@ -6,7 +6,8 @@ var varLeagueId = 11769;
 var varEntryId = 2699654;
 var varEntryIdLeader = 0;
 
-const urlImage = 'https://i.ibb.co/59t5X8H/FPL-Statement-Lead-2.png';
+//const urlImage = 'https://i.ibb.co/59t5X8H/FPL-Statement-Lead-2.png';
+const urlImage = 'https://github.com/ttsantos/Scriptable-examples/blob/main/FPL-Statement-Lead-2-2.png?raw=true';
 const imageReq = new Request(urlImage);
 var imageLoaded = await imageReq.loadImage();
 
