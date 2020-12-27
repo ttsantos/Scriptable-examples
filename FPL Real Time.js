@@ -60,6 +60,18 @@ async function getLiveData(){
   return result_4;
 }
 
+async function getHistory(teamId){
+  const url_5 = `https://fantasy.premierleague.com/api/entry/${teamId}/history/`;
+  const req_5 = new Request(url_5);
+  const result_5 = await req_5.loadJSON();
+  return result_5;
+}
+
+async function getLastGWPoints(teamId){
+  var dataHST = await getHistory(teamId);
+  return dataHST.current[dataHST.current.length-2].total_points;
+}
+
 // get live points by elementId (Player)
 function getLivePoints(dataArray, elementId){
   var array_temp = dataArray;
@@ -75,7 +87,7 @@ async function getTotalLivePoints(teamId){
   var totalPoints = 0;
   var dataTP = null;
   dataTP = await getTeamPicks(teamId);
-  
+ 
   for (var i=0; i < dataTP.picks.length; i++){
     var temp = getLivePoints(liveData, dataTP.picks[i].element);
     totalPoints = totalPoints + temp * dataTP.picks[i].multiplier;
@@ -111,15 +123,15 @@ async function getLeagueLiveLeaderPoints(){
 }
 
 async function getTotalPoints(teamId){
-  var GwFinished = result_1.league.closed;
+  var NotUpdated = result_1.standings.results[0].event_total;
   // validate start of gw; during gw with official pending OK; during gw with official table updated (if not, get previous gw); closed GW;
-  if(GwFinished == 0){
-    var liveScore = await getTotalLivePoints(teamId);
-    return findFPLData(result_1,teamId).total + liveScore - findFPLData(result_1,teamId).event_total;
+  var liveScore = await getTotalLivePoints(teamId);
+  var dataLastGW = await getLastGWPoints(teamId);
+  if(NotUpdated == 0){
+    return findFPLData(result_1,teamId).total + liveScore;
   }
-  else return findFPLData(result_1,teamId).total; // + findFPLData(result_1,teamId).event_total
+  else return liveScore + dataLastGW; //findFPLData(result_1,teamId).total; // + findFPLData(result_1,teamId).event_total
 }
-
 
 // generic functions to retrieve FPL Data
 function findFPLData(data, idToLookFor) {
