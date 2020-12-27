@@ -27,8 +27,8 @@ Displays:
 Displays:
 
 1. Last Polls Data by Political party
-2. Polling Firm
-3. Poll Date
+2. Poll Date 
+3. Polling Firm
 
 ![iOS Widget example](https://github.com/ttsantos/Scriptable-examples/blob/main/PortugalPollsExample.png?raw=true)
 
