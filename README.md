@@ -4,6 +4,7 @@ If you enjoy the time saved by the scripts
 [ Buy me a coffee ](https://paypal.me/ttsantos)
 
 Used with [Scriptable](https://scriptable.app) and to be added as a widget on HomeScreen
+(Please toggle always run in the app)
 
 ## Fantasy Premier League Private League Live Points iOS Widget (FPL Real Time.js)
 
