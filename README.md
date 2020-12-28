@@ -7,6 +7,7 @@ Used with [Scriptable](https://scriptable.app) and to be added as a widget on Ho
 (Please toggle always run in the app)
 
 ## Fantasy Premier League Private League Live Points iOS Widget (FPL Real Time.js)
+(Doesn't work on large leagues due to widget memory restrictions)
 
 Displays:
 
