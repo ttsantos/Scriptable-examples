@@ -2,14 +2,9 @@
 // These must be at the very top of the file. Do not edit.
 // icon-color: teal; icon-glyph: futbol; share-sheet-inputs: plain-text;
 
-var varLeagueId = 11769;
-var varEntryId = 2699654;
+var varLeagueId = 92755; //11769;
+var varEntryId = 14499; //2699654;
 var varEntryIdLeader = 0;
-
-//const urlImage = 'https://i.ibb.co/59t5X8H/FPL-Statement-Lead-2.png';
-const urlImage = 'https://github.com/ttsantos/Scriptable-examples/blob/main/FPL-Statement-Lead-2-2.png?raw=true';
-const imageReq = new Request(urlImage);
-var imageLoaded = await imageReq.loadImage();
 
 // Forces signing on a number, returned as a string
 function getNumber(theNumber)
@@ -41,7 +36,15 @@ const req_2 = new Request(url_2);
 const result_2 = await req_2.loadJSON();
 
 var currentGameWeek = result_2.current_event;
-console.log(currentGameWeek);
+//console.log('gameweek:'currentGameWeek);
+
+// get live data for current GameWeek
+async function getLiveData(){
+  const url_4 = `https://fantasy.premierleague.com/api/event/${currentGameWeek}/live/`;
+  const req_4 = new Request(url_4);
+  const result_4 = await req_4.loadJSON();
+  return result_4;
+}
 var liveData = await getLiveData(currentGameWeek);
 
 //initial call for picks with entryId and currentEvent;
@@ -50,14 +53,6 @@ async function getTeamPicks(teamId){
   var req_3 = new Request(url_3);
   var result_3 = await req_3.loadJSON();
   return result_3;
-}
-
-// get live data for current GameWeek
-async function getLiveData(){
-  const url_4 = `https://fantasy.premierleague.com/api/event/${currentGameWeek}/live/`;
-  const req_4 = new Request(url_4);
-  const result_4 = await req_4.loadJSON();
-  return result_4;
 }
 
 async function getHistory(teamId){
@@ -91,8 +86,9 @@ async function getTotalLivePoints(teamId){
   for (var i=0; i < dataTP.picks.length; i++){
     var temp = getLivePoints(liveData, dataTP.picks[i].element);
     totalPoints = totalPoints + temp * dataTP.picks[i].multiplier;
-    totalPoints = totalPoints + dataTP.entry_history.event_transfers_cost;
   }
+  //console.log('transfers: ' + dataTP.entry_history.event_transfers_cost);
+  totalPoints = totalPoints - dataTP.entry_history.event_transfers_cost;
   return totalPoints;
 }
 
@@ -109,7 +105,7 @@ async function getLeagueLiveLeaderPoints(){
     var TotalPointsTeam = await getTotalLivePoints(teamToGetValues);
     var TotalPointsIncludingLive = 0;
     var TotalPointsIncludingLive = await getTotalPoints(teamToGetValues);
-    console.log('#2: Team:' + teamToGetValues + ', Live Points: ' + TotalPointsTeam + ', Total Points: ' + TotalPointsIncludingLive);
+    //console.log('#2: Team:' + teamToGetValues + ', Live Points: ' + TotalPointsTeam + ', Total Points: ' + TotalPointsIncludingLive);
     if(TotalPointsTeam > teamTopPoints){
       teamTopPoints = TotalPointsTeam;
     }
@@ -158,6 +154,10 @@ console.log('topPointsLeader:' + totalPointsLeader + ', my team:'+ MyTotalPoints
 // Widget Configuration;
 
 if (config.runsInWidget) {
+  //const urlImage = 'https://i.ibb.co/59t5X8H/FPL-Statement-Lead-2.png';
+  const urlImage = 'https://github.com/ttsantos/Scriptable-examples/blob/main/FPL-Statement-Lead-2-2.png?raw=true';
+  const imageReq = new Request(urlImage);
+  var imageLoaded = await imageReq.loadImage();
   // create and show widget
   let widget = createWidget(findFPLData(result_1,varEntryId).entry_name, "League Leader", totalPointsLeader , "GW Live Points", myScore, differencePointsFromFirst, differencePointsFromFirstAll);
   Script.setWidget(widget);
@@ -209,4 +209,5 @@ function createWidget(teamName, RankLabel, read, preTodo, todos, pointsDifferenc
 
 return widget;
 }
-
+  
+  
