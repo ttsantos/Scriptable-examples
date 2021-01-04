@@ -18,12 +18,13 @@ var csv = await getCSV();
 var headers = csv[0];
 split_headers = headers.split(',');
 var results = csv[1];
-split_results = results.split(',');
+// split_results = results.split(',');
+split_results = results.match(/(".*?"|[^",\s]+)(?=\s*,|\s*$)/g);
 
-/* check results - debug
+//check results - debug
 for(var i = 0; i < split_headers.length; i++){
 console.log('i:' + i + ' ' +  split_headers[i] + ' : '  + split_results[i]);
-}*/
+}
 
 function parseStringNA(string){
   hasPercentage = string.includes('%');
