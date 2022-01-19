@@ -6,6 +6,18 @@ If you enjoy the time saved by the scripts
 Used with [Scriptable](https://scriptable.app) and to be added as a widget on HomeScreen
 (Please toggle always run in the app)
 
+## Online-go Next Move Notifier iOS Widget (OGS Notifier.js)
+
+Displays if it is your next move and the last time it checked
+
+![iOS Widget example](https://github.com/ttsantos/Scriptable-examples/blob/main/OGSNotifier_example.jpeg?raw=true)
+
+> Accepts JSON text as parameter for username and game identifier;
+
+**Default parameters for iOS widget: {“username”:“ttsantos”,“game”:40471380}**
+
+
+
 ## Fantasy Premier League Private League Live Points iOS Widget (FPL Real Time.js)
 (Doesn't work on large leagues due to widget memory restrictions)
 
